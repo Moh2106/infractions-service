@@ -1,0 +1,28 @@
+type Query{
+    listInfractions : [InfractionDTO],
+    getInfractionById(id : ID) : InfractionDTO
+}
+
+type Mutation {
+    saveInfraction(infraction : Infraction) : InfractionDTO,
+    updateInfraction(id : ID, infraction : Infraction) : InfractionDTO,
+    deleteInfraction(id : ID) : Boolean
+}
+
+input Infraction{
+    id : ID,
+    date : String,
+    numero_radar : Int,
+    matricule_vehicule : String,
+    vitesse_maximale : Float,
+    montant_infraction : Float
+}
+
+type InfractionDTO{
+    id : ID,
+    date : String,
+    numero_radar : Int,
+    matricule_vehicule : String,
+    vitesse_maximale : Float,
+    montant_infraction : Float
+}
